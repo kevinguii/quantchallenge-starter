@@ -20,15 +20,6 @@ class Ticker(Enum):
 
 def place_market_order(side: Side, ticker: Ticker, quantity: float) -> None:
     """Place a market order.
-    
-    Parameters
-    ----------
-    side
-        Side of order to place
-    ticker
-        Ticker of order to place
-    quantity
-        Quantity of order to place
     """
     if DEBUG:
         print(f"Python Market order: {side} {ticker} {quantity} shares")
@@ -36,41 +27,11 @@ def place_market_order(side: Side, ticker: Ticker, quantity: float) -> None:
 
 def place_limit_order(side: Side, ticker: Ticker, quantity: float, price: float, ioc: bool = False) -> int:
     """Place a limit order.
-    
-    Parameters
-    ----------
-    side
-        Side of order to place
-    ticker
-        Ticker of order to place
-    quantity
-        Quantity of order to place
-    price
-        Price of order to place
-    ioc
-        Immediate or cancel flag (FOK)
-
-    Returns
-    -------
-    order_id
-        Order ID of order placed
     """
     return 0
 
 def cancel_order(ticker: Ticker, order_id: int) -> bool:
     """Cancel an order.
-    
-    Parameters
-    ----------
-    ticker
-        Ticker of order to cancel
-    order_id
-        Order ID of order to cancel
-
-    Returns
-    -------
-    success
-        True if order was cancelled, False otherwise
     """
     return True
 
@@ -101,16 +62,6 @@ class Strategy:
         self, ticker: Ticker, side: Side, quantity: float, price: float
     ) -> None:
         """Called whenever two orders match. Could be one of your orders, or two other people's orders.
-        Parameters
-        ----------
-        ticker
-            Ticker of orders that were matched
-        side:
-            Side of orders that were matched
-        quantity
-            Volume traded
-        price
-            Price that trade was executed at
         """
         if DEBUG:
             print(f"Python Trade update: {ticker} {side} {quantity} shares @ {price}")
@@ -119,16 +70,6 @@ class Strategy:
         self, ticker: Ticker, side: Side, quantity: float, price: float
     ) -> None:
         """Called whenever the orderbook changes. This could be because of a trade, or because of a new order, or both.
-        Parameters
-        ----------
-        ticker
-            Ticker that has an orderbook update
-        side
-            Which orderbook was updated
-        price
-            Price of orderbook that has an update
-        quantity
-            Volume placed into orderbook
         """
         self.market_price = price
 
@@ -141,18 +82,6 @@ class Strategy:
         capital_remaining: float,
     ) -> None:
         """Called whenever one of your orders is filled.
-        Parameters
-        ----------
-        ticker
-            Ticker of order that was fulfilled
-        side
-            Side of order that was fulfilled
-        price
-            Price that order was fulfilled at
-        quantity
-            Volume of order that was fulfilled
-        capital_remaining
-            Amount of capital after fulfilling order
         """
         if side == Side.BUY:
             self.position += quantity
@@ -192,30 +121,6 @@ class Strategy:
                            time_seconds: Optional[float]
         ) -> None:
         """Called whenever a basketball game event occurs.
-        Parameters
-        ----------
-        event_type
-            Type of event that occurred
-        home_score
-            Home team score after event
-        away_score
-            Away team score after event
-        player_name (Optional)
-            Player involved in event
-        substituted_player_name (Optional)
-            Player being substituted out
-        shot_type (Optional)
-            Type of shot
-        assist_player (Optional)
-            Player who made the assist
-        rebound_type (Optional)
-            Type of rebound
-        coordinate_x (Optional)
-            X coordinate of shot location in feet
-        coordinate_y (Optional)
-            Y coordinate of shot location in feet
-        time_seconds (Optional)
-            Game time remaining in seconds
         """
 
         self.home_score = home_score

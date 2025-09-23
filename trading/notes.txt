@@ -1,0 +1,3 @@
+instructions:
+basketball game, sequential information
+go long if i think home team win, short if home team lose
