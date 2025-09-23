@@ -13,7 +13,4 @@ research:
 - model tuning
 - feature importance
 - parameter tuning
-
-
-tries:
-1. random forest regressor, standard scaling -> R^2 = 0.53
+- ensembling
