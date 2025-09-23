@@ -1,0 +1,19 @@
+research:
+- analyze correlations
+- analyze outliers
+- visualize distributions
+
+- feature engineering:
+	- scaling?
+- potential interaction features? when would i need to do that
+
+- modeling
+- initial testing
+- data tuning
+- model tuning
+- feature importance
+- parameter tuning
+
+
+tries:
+1. random forest regressor, standard scaling -> R^2 = 0.53
