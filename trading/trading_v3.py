@@ -41,7 +41,7 @@ class Strategy:
         
         
 
-    def __init__(self,alpha = 2.0, beta = 0.2):
+    def __init__(self,alpha = 0.5, beta = 0.5):
         self.alpha = alpha
         self.beta = beta
         self.reset_state()

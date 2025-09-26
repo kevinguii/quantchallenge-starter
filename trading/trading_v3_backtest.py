@@ -5,7 +5,7 @@ import statistics
 import importlib
 
 # Change this if your strategy module is named differently
-STRATEGY_MODULE = "trading_v3"
+STRATEGY_MODULE = "trading_v4"
 
 def max_drawdown(equity_curve):
     peak = -float("inf")
